@@ -1,0 +1,22 @@
+$phone: "599px"
+$tablet1: "600px" // portrait
+$tablet2: "900px" // landscape
+$desktop: "1200px"
+$large: "1800px"
+
+@mixin mq($size)
+    @if $size == "<=phone"
+        @media (max-width: $phone)
+            @content
+    @else if $size == "tablet|=<"
+        @media (min-width: $tablet1)
+            @content
+    @else if $size == "tablet-=<"
+        @media (min-width: $tablet2)
+            @content
+    @else if $size == "desktop=<"
+        @media (min-width: $desktop)
+            @content
+    @else if $size == "large=<"
+        @media (min-width: $large)
+            @content
